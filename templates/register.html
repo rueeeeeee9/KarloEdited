@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Register a Pokemon to the Pokedex!</h1>
+<form action="{{ url_for('processing') }}" method="post">
+    <label for="pkmn_type">Type of Pokemon:</label>
+    <select name="pkmn_type" id="pkmn_type" required>
+        <option disabled selected value>...</option>
+        <option value="bug">Bug</option>
+        <option value="dragon">Dragon</option>
+        <option value="electirc">Electric</option>
+        <option value="fighting">Fighting</option>
+        <option value="fire">Fire</option>
+        <option value="flying">Flying</option>
+        <option value="ghost">Ghost</option>
+        <option value="grass">Grass</option>
+        <option value="ground">Ground</option>
+        <option value="ice">Ice</option>
+        <option value="normal">Normal</option>
+        <option value="poison">Poison</option>
+        <option value="psychic">Psychic</option>
+        <option value="rock">Rock</option>
+        <option value="water">Water</option>
+    </select><br><br>
+    <label for="pkmn_name">Name of Pokemon:</label>
+    <input type="text" name="pkmn_name" id="pkmn_name" required><br><br>
+    <label for="pkmn_url">Image URL:</label>
+    <input type="url" name="pkmn_url" id="pkmn_url"><br>
+    <textarea name="pkmn_desc" placeholder="Tell something about your Pokemon" cols="30" rows="10"></textarea><br>
+    <input type="submit" value="Register!">
+</form>
+{% endblock %}
